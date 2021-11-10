@@ -10,8 +10,19 @@ import queue
 
 MIND_MAP_NOT_FOUND = "Mind map not found"
 
-app = FastAPI()
-client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URI"])
+description = """
+<h1>Mind Map API</h1>
+<p>This is a simple mind map API.</p>
+<p>You can create a new mind map, add a new node, add a new leaf and get the text of a leaf.</p>
+<p>You can also delete a node or a leaf.</p>
+"""
+
+app = FastAPI(
+    title="Mind Map API",
+    description=description,
+    version="0.1.0",
+)
+client = motor.motor_asyncio.AsyncIOMotorClient(os.environ.get("MONGODB_URI",  "TESTING"))
 db = client.mindmap
 
 

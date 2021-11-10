@@ -6,6 +6,15 @@ Your service must provide REST API endpoints to create a mind map and store its 
 
 Your solution must be written in **Python**.
 
+## Delivery
+The latest version of the Image and be pulled from `fastboyz/mind-map`
+From there, running it like so `docker run --name mind-map -e MONGODB_URI='<<MongoDB URL>>' -e PORT=80 -p 80:80 fastboyz/mind-map` will launch the app.
+The swagger UI can be reach from `http://localhost:<<PORT>>/docs`
+
+Alternatively, the app can also be reach at `https://my-mind-map.herokuapp.com/docs#/`
+
+Once dependencies installed, tests can be ran with `pytest  --cov --cov-branch --cov-report term-missing`
+
 ## Requirements
 
 The provided `./bin/run.sh` script must be enough to build and / or start the REST API.
