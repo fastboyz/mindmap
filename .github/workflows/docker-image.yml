@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-mind-map:$(date +%s)
+    - name: Push Docker Image
+      # You may pin to the exact commit or the version.
+      # uses: julioarruda/pushimagetoregistry@3679a680bb9d6cbf3c1de8aeed592faf1e140c8b
+      uses: julioarruda/pushimagetoregistry@v1
+      with:
+        # Username Name with push permission
+        acr-tokenname: ${{ secrets.DOCKER_USERNAME }}
+        # Token/PWD with push permission
+        acr-token: ${{ secrets.DOCKER_TOKEN }}
+        # Docker Account Name
+        acr-account: ${{ secrets.DOCKER_ACCOUNT_NAME }}
+        # Docker Image Name
+        acr-imagename: ${{ secrets.DOCKER_IMAGE_NAME }}
