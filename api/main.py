@@ -12,8 +12,7 @@ MIND_MAP_NOT_FOUND = "Mind map not found"
 
 description = """
 <p>This is a simple mind map API.</p>
-<p>You can create a new mind map, add a new node, add a new leaf and get the text of a leaf.</p>
-<p>You can also delete a node or a leaf.</p>
+<p>You can create a new mind map, add a new leaf and get the text of a leaf.</p>
 """
 
 app = FastAPI(
