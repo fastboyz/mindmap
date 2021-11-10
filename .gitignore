@@ -1,0 +1,12 @@
+
+.idea/
+
+__pycache__/
+
+questions
+
+.coverage
+
+scrachpad.txt
+
+.vscode/

@@ -1,0 +1,9 @@
+.venv/
+.idea
+.vscode
+.DS_Store
+.git
+.gitignore
+.gitmodules
+.coverage
+.pytest_cache

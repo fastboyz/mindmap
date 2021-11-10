@@ -1,0 +1,9 @@
+fastapi
+Uvicorn
+pydantic
+motor
+pymongo
+pymongo[srv]
+pytest
+requests
+pytest-cov
