@@ -2,8 +2,8 @@
 name: Deploy to heroku.
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [ master ]
 
 jobs:
   build:
