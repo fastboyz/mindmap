@@ -7,7 +7,6 @@ from fastapi.responses import JSONResponse, PlainTextResponse
 from models.model import NodeModel, Leaf, TreeCreate
 
 import queue
-import uvicorn
 
 MIND_MAP_NOT_FOUND = "Mind map not found"
 
@@ -103,7 +102,3 @@ def read_leaves(head, data, visited):
                 visited.add(child["name"])
                 fifo.put((child, path + '/' + child["name"], child["text"]))
     return None, None
-
-
-if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port='8000')
