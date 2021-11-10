@@ -15,6 +15,8 @@ Alternatively, the app can also be reach at `https://my-mind-map.herokuapp.com/d
 
 Once dependencies installed, tests can be ran with `pytest  --cov --cov-branch --cov-report term-missing`
 
+To run the app directly from python, first add `MONGODB_URI='<<MongoDB URL>>` In env, then use ` uvicorn main:app --reload` from the `api` folder
+
 ## Requirements
 
 The provided `./bin/run.sh` script must be enough to build and / or start the REST API.
